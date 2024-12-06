@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="page3.css">
+  <title>Proyecto Bene</title>
+</head>
+<body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #6CBEC7;
+      padding: 10px 20px;
+      height: 80px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin-top: 15px;
+    }
+
+    .navbar ul li {
+      margin-left: 20px;
+    }
+
+    .navbar ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: #fff;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+      }
+
+      .navbar ul li {
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .navbar ul.active {
+        display: flex;
+      }
+    }
+
+     .gallery-container {
+      width: 35%;
+      height: 1000px;
+      margin: 50px auto;
+      margin-top: 100px;
+    }
+     .gallery {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      position: relative;
+      right: -70%;
+      top: -40%;
+      height: 500px;
+      -webkit-box-shadow: 10px 10px 5px 0px rgba(183,183,183,1);
+      -moz-box-shadow: 10px 10px 5px 0px rgba(183,183,183,1);
+      box-shadow: 10px 10px 5px 0px rgba(183,183,183,1);
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .active {
+      display: block;
+      animation: fade 1s ease-in-out;
+    }
+
+    @keyframes fade {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+
+    .dots {
+      text-align: center;
+      padding: 10px;
+      background: #333;
+      position: relative;
+      right: -70%;
+      top: -42%;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .dots span {
+      height: 10px;
+      width: 10px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .dots .active-dot {
+      background-color: #717171;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="#" class="logo">Proyecto Bene</a>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul>
+      <li><img src="https://www.benemeritoiguala.com.mx/wp-content/uploads/2018/05/logo800x200.png" alt="" class="logo-bene"></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <div class="div-main">
+    <img src="https://media.admagazine.com/photos/61b7c48341b86fd66ff25cb8/16:9/w_2560%2Cc_limit/Edificios.jpg" alt="" class="img-main">
+    <div class="div-info-main">
+      <h3 class="h3-info-main">Proyecto Bene</h3>
+      <p class="p-info-main">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod amet qui facilis necessitatibus fugit. Omnis assumenda exercitationem iste laboriosam, possimus perferendis corrupti dicta alias libero aut quos architecto eos aspernatur!
+      Molestiae consectetur veritatis officia neque sit aperiam error, unde quis itaque cumque assumenda maiores veniam porro eum reiciendis, suscipit nisi incidunt excepturi deleniti perspiciatis. Laborum quis repudiandae voluptas fuga voluptatem.</p>
+      <button class="btn-info-main">Ver más</button>
+    </div>
+  </div>
+
+  <div class="div-grid-sub">
+    <div class="div-card-sub">
+      <img class="img-card-sub" src="https://cdn.forbes.com.mx/2020/06/edificios-rascacielos-640x360.jpg" alt="">
+      <h5 class="h5-img-card-sub">Lorem ipsum dolor sit amet.</h5>
+      <button class="btn-card-sub">Ver más</button>
+    </div>
+    <div class="div-card-sub">
+      <img class="img-card-sub" src="https://cdn.forbes.com.mx/2020/06/edificios-rascacielos-640x360.jpg" alt="">
+      <h5 class="h5-img-card-sub">Lorem ipsum dolor sit amet.</h5>
+      <button class="btn-card-sub">Ver más</button>
+    </div>
+    <div class="div-card-sub">
+      <img class="img-card-sub" src="https://cdn.forbes.com.mx/2020/06/edificios-rascacielos-640x360.jpg" alt="">
+      <h5 class="h5-img-card-sub">Lorem ipsum dolor sit amet.</h5>
+      <button class="btn-card-sub">Ver más</button>
+    </div>
+  </div>
+
+  <div class="div-info">
+    <img class="info-img" src="https://www.networkadvertising.co.in/images/net/aboutus.jpg" alt="">
+    <div class="info-div">
+      <h1>About us</h1>
+      <h4>Why Businesses Choose us</h4>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt facere doloribus, asperiores cum laborum aperiam dolorem sed explicabo consequuntur maiores! Officia deleniti quisquam laborum, expedita voluptas quam voluptates minima corporis!</p>
+    </div>
+  </div>
+  
+  </div>
+  <div class="pie-div">
+      <h3 class="title-pie">Redes sociales</h5>
+        <div class="grid-pie">
+          <div>
+            <img class="logo-red" src="https://cdn-icons-png.freepik.com/256/2504/2504903.png?uid=R173100789&ga=GA1.1.1789846912.1731204744&semt=ais_hybrid" alt="">
+            <img class="logo-red" src="https://cdn-icons-png.freepik.com/256/2111/2111463.png?uid=R173100789&ga=GA1.1.1789846912.1731204744&semt=ais_hybrid" alt="">
+            <img class="logo-red" src="https://cdn-icons-png.freepik.com/256/2504/2504957.png?uid=R173100789&ga=GA1.1.1789846912.1731204744&semt=ais_hybrid" alt="">
+            <img class="logo-red" src="https://cdn-icons-png.freepik.com/256/10455/10455437.png?uid=R173100789&ga=GA1.1.1789846912.1731204744&semt=ais_hybrid" alt="">
+          </div>
+        </div>
+    </div> 
+  <script>
+    let slideIndex = 0;
+    let slides = document.getElementsByClassName("slide");
+    let dots = document.getElementsByClassName("dots")[0].getElementsByTagName("span");
+
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+        dots[i].classList.remove("active-dot");
+      }
+
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+
+      slides[slideIndex - 1].classList.add("active");
+      dots[slideIndex - 1].classList.add("active-dot");
+
+      setTimeout(showSlides, 10000);
+    }
+
+    function currentSlide(index) {
+      slideIndex = index;
+      showSlides();
+    }
+
+    showSlides();
+  </script>
+  <script>
+    function toggleMenu() {
+      document.querySelector('.navbar ul').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
